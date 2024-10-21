@@ -15,4 +15,16 @@ public class TriangleDemo {
     int VBO, VAO;
     
     int vertexShader, fragmentShader, shaderProgram;
+    
+    public static int generateVBO() {
+        return 0;
+    }
+    
+    public static int generateVAO() {
+        return 0;
+    }
+    
+    public static int compileShaders() {
+        return 0;
+    }
 }
