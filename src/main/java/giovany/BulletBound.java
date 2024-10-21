@@ -17,5 +17,6 @@ public class BulletBound {
         }
         
         WindowManager.DestroyDisplay();
+        WindowManager.CleanUp();
     }
 }
