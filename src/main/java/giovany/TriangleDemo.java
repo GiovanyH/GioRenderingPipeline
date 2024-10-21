@@ -1,5 +1,12 @@
 package giovany;
 
+import org.lwjgl.opengl.GL15;
+import org.lwjgl.opengl.GL30;
+
+import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
+import org.lwjgl.BufferUtils;
+
 /**
  *
  * @author henri
@@ -16,15 +23,20 @@ public class TriangleDemo {
     
     int vertexShader, fragmentShader, shaderProgram;
     
-    public static int generateVBO() {
-        return 0;
+    public void generateVBO() {
+        this.VBO = GL15.glGenBuffers();
+        GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, this.VBO);
+        
+        FloatBuffer buffer = OpenGLBuffers.createFloatBuffer(vertices);
+        GL15.glBufferData(GL15.GL_ARRAY_BUFFER, buffer, GL15.GL_STATIC_DRAW);
+        GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, 0);
     }
     
-    public static int generateVAO() {
-        return 0;
+    public void generateVAO() {
+        this.VAO = GL30.glGenVertexArrays();
+        GL30.glBindVertexArray(this.VAO);
     }
     
-    public static int compileShaders() {
-        return 0;
+    public void compileShaders() {
     }
 }
