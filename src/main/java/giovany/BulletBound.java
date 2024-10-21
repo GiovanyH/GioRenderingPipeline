@@ -1,4 +1,4 @@
-package com.mycompany.bulletbound;
+package giovany;
 
 import org.lwjgl.opengl.GL;
 import static org.lwjgl.opengl.GL33C.*;
