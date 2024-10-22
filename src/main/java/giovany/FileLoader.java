@@ -25,8 +25,8 @@ public class FileLoader {
         return content.toString(); // Return the file content as a single string
     }
     
-    public static void FileLoader(String filePath) throws IOException {
+    public static String FileLoader(String filePath) throws IOException {
         String fileContent = loadFileAsString(filePath);
-        System.out.println(fileContent);
+        return fileContent;
     }
 }

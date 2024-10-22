@@ -12,7 +12,12 @@ public class BulletBound {
         
         GL.createCapabilities();
         
-        FileLoader("src\\main\\java\\giovany\\test.txt");
+        ShaderCompile triangleShader = new ShaderCompile();
+        
+        String triangleFragmentShader = FileLoader("shaders\\triangle.fragment");
+        String triangleVertexShader = FileLoader("shaders\\triangle.vertex");
+        
+        triangleShader.CreateShader(triangleVertexShader, triangleFragmentShader);
         
         float vertices[] = {
             -0.5f, -0.5f, 0.0f,
@@ -28,6 +33,8 @@ public class BulletBound {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
             glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
             
+            triangleShader.bind();
+            
             glBindVertexArray(VAO);
             glEnableVertexAttribArray(0);
             glDrawArrays(GL_TRIANGLES, 0, 3);
@@ -35,6 +42,8 @@ public class BulletBound {
             glBindVertexArray(0);
             
             WindowManager.UpdateWindow();
+            
+            triangleShader.unbind();
         }
         
         WindowManager.DestroyDisplay();
