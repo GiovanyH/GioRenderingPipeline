@@ -1,15 +1,18 @@
 package giovany;
 
+import static giovany.FileLoader.FileLoader;
+import java.io.IOException;
 import org.lwjgl.opengl.GL;
 import static org.lwjgl.opengl.GL33C.*;
 
 public class BulletBound {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         WindowManager.Init();
         WindowManager.CreateWindow();
         
         GL.createCapabilities();
         
+        FileLoader("src\\main\\java\\giovany\\test.txt");
         
         float vertices[] = {
             -0.5f, -0.5f, 0.0f,
