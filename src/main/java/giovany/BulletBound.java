@@ -22,8 +22,13 @@ public class BulletBound {
         float vertices[] = {
             -0.5f, -0.5f, 0.0f,
              0.5f, -0.5f, 0.0f,
-             0.0f,  0.5f, 0.0f
-        }; 
+             0.0f,  0.5f, 0.0f,
+        };
+        
+        int indices[] = {
+            0, 1, 3,
+            1, 2, 3
+        };
         
         int VAO = TriangleDemo.generateVAO();
         int VBO = TriangleDemo.generateVBO(vertices);

@@ -42,6 +42,28 @@ public class WindowManager {
         glfwPollEvents();
     }
     
+    public static boolean isResized() {
+        int[] currentWidth = new int[1];
+        int[] currentHeight = new int[1];
+        
+        glfwGetWindowSize(window, currentWidth, currentHeight);
+        
+        if (currentWidth[0] != width || currentHeight[0] != height) {
+            width = currentWidth[0];
+            height = currentHeight[0];
+            return true;
+        }
+        return false;
+    }
+    
+    public int getWidth() {
+        return width;
+    }
+    
+    public int getHeight() {
+        return height;
+    }
+    
     public static void DestroyDisplay(){
         // Terminate GLFW and free the error callback
         CleanUp();
